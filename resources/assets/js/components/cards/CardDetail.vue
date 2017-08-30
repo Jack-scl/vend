@@ -12,7 +12,7 @@
       <a :class="isLogRunning() ? 'label-warn' : 'label-dark'" @click="toggleTimer(card)">
         <i class="icon-clock"></i>
         {{ $t('logs.startTimer') }}
-        <span v-if="isLogRunning()">{{ elapsedFormat(timer) }}</span>
+        <span v-if="isLogRunning()">{{ elapsedFormat(timer, true) }}</span>
       </a>
     </template>
 

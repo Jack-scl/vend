@@ -10,9 +10,9 @@
             <div class="modal-header-right">
                 <a v-if="right" @click="right.action()">{{ $t(right.label) }}</a>
             </div>
-            <div class="modal-meta" v-if="$slots['modal-meta']">
-                <slot name="modal-meta"></slot>
-            </div>
+        </div>
+        <div class="modal-meta" v-if="$slots['modal-meta']">
+            <slot name="modal-meta"></slot>
         </div>
         <div class="modal-body">
             <slot></slot>

@@ -8,7 +8,7 @@
         </title-bar>
 
         <div class="container">
-            <loader ref="loader"></loader>
+            <loader :loading="loading" />
 
             <div v-if="empty" class="no-record">{{ $t('topics.empty') }}</div>
 
@@ -102,13 +102,14 @@
       data () {
         return {
           loaded: false,
-          empty: false
+          empty: false,
+          loading: false
         }
       },
       mounted () {
-        this.$refs.loader.start()
+        this.loading = true
         this.$store.dispatch('getTopics').then(() => {
-          this.$refs.loader.stop()
+          this.loading = false
           this.loaded = true
           if (this.topics.length === 0) {
             this.empty = true

@@ -4,7 +4,7 @@
             <div class="title-bar-title">Files</div>
         </div>
         <div class="container">
-            <loader ref="loader"></loader>
+            <loader :loading="loading" />
             <div class="wbox">
                 <file-list :files="files" :small="false"></file-list>
             </div>
@@ -25,7 +25,8 @@
       },
       data () {
         return {
-          files: []
+          files: [],
+          loading: false
         }
       },
       methods: {
@@ -36,10 +37,10 @@
         }
       },
       mounted () {
-        this.$refs.loader.start()
+        this.loading = true
         axios.get('files').then(res => {
           this.files = res.data
-          this.$refs.loader.stop()
+          this.loading = false
         })
       }
     }

@@ -5,7 +5,7 @@
           :save="save"
           :cancel="cancel">
     <error-message ref="errorMessage"/>
-    <form-input :label="$t(topics.form.title)" v-model="topic.title"/>
+    <form-input :label="$t('topics.form.title')" v-model="topic.title"/>
     <div>
       <label class="form-label">{{ $t('topics.form.members') }}</label>
       <members-list :users="users" v-model="topic.users"/>

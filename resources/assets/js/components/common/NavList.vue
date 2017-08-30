@@ -31,6 +31,9 @@
         &-light, &-light a {
             color: #fff;
         }
+        &-light i {
+            color: rgba(255, 255, 255, .4);
+        }
         &-small, &-small i {
             font-size: 13px;
         }

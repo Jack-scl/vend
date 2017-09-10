@@ -26,10 +26,13 @@
         FileAttachment,
         Editor
       },
-      computed: {
-        ...mapGetters({
-          message: 'message'
-        })
+      data() {
+        return {
+          message: {
+            message: '',
+            files: []
+          }
+        }
       },
       methods: {
         save () {
@@ -40,17 +43,14 @@
             urlParams: {topicId: this.$route.params.id}
           })
             .then(() => {
-              this.$store.commit('setMessage', {
-                message: '',
-                files: []
-              })
+              this.message.message = ''
+              this.message.files = []
             })
             .catch(err => {
               this.$refs.errorMessage.set(err)
             })
         },
         attachFile (file) {
-          if (!this.message.files) this.$set(this.message, 'files', [])
           this.message.files.push(file)
         }
       }

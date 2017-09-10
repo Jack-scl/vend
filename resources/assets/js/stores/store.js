@@ -27,6 +27,7 @@ export default new Vuex.Store({
       store: 'message',
       baseUrl: 'topics/{topicId}/messages',
       options: {
+        addType: 'prepend',
         paginated: true
       }
     }),

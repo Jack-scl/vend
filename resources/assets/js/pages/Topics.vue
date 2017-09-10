@@ -3,7 +3,7 @@
         <title-bar>
             <template slot="left">{{ $t('topics.index') }}</template>
             <template slot="right">
-                <v-button @click="createTopic()" type="primary">{{ $t('topics.create') }}</v-button>
+                <button @click="createTopic()" class="btn btn-primary">{{ $t('topics.create') }}</button>
             </template>
         </title-bar>
 
@@ -76,12 +76,10 @@
     import Loader from '../components/common/Loader.vue'
     import TopicForm from '../components/topics/TopicForm.vue'
     import TitleBar from '../components/common/TitleBar.vue'
-    import VButton from '../components/common/Button.vue'
 
     export default {
       components: {
         Loader,
-        VButton,
         TitleBar
       },
       computed: {

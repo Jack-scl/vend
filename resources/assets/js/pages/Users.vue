@@ -4,7 +4,7 @@
             <template slot="left">{{ $t('users.index') }}</template>
             <template slot="right">
                 <a @click="showSearch()" class="btn"><i class="icon-search"></i></a>
-                <v-button @click="create()" type="primary">{{ $t('users.create') }}</v-button>
+                <button @click="create()" class="btn btn-primary">{{ $t('users.create') }}</button>
             </template>
         </title-bar>
         <div class="container">
@@ -32,7 +32,6 @@
     import UserDetail from '../components/users/UserDetail.vue'
     import Loader from '../components/common/Loader.vue'
     import SearchBar from '../components/users/SearchBar.vue'
-    import VButton from '../components/common/Button'
     import Card from '../components/common/Card'
     import TitleBar from '../components/common/TitleBar'
 
@@ -42,7 +41,6 @@
         Loader,
         Card,
         TitleBar,
-        VButton,
         SearchBar
       },
       data () {

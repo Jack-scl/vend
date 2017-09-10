@@ -6,7 +6,7 @@
                 <router-link :to="{name: 'projects-archive'}">{{ $t('projects.archive') }}</router-link>
             </template>
             <template slot="right">
-                <ui-button @click="createProject()" type="primary">{{ $t('projects.create') }}</ui-button>
+                <button @click="createProject()" class="btn btn-primary">{{ $t('projects.create') }}</button>
             </template>
         </title-bar>
 
@@ -51,7 +51,6 @@
     import ProgressBar from '../components/common/ProgressBar'
     import AvatarList from '../components/common/AvatarList'
     import TitleBar from '../components/common/TitleBar'
-    import UiButton from '../components/common/Button'
     import LabeledProp from '../components/common/LabeledProp'
 
     export default {
@@ -59,7 +58,6 @@
         Loader,
         LabeledProp,
         ProgressBar,
-        UiButton,
         TitleBar,
         AvatarList,
         Card

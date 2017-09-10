@@ -2,7 +2,7 @@
   <div>
     <title-bar :title="$t('notifications.index')">
       <template slot="right">
-        <ui-button @click="markAsRead()" type="primary" :label="$t('notifications.markAsRead')"/>
+        <button @click="markAsRead()" class="btn btn-primary">{{ $t('notifications.markAsRead') }}</button>
       </template>
     </title-bar>
 
@@ -44,14 +44,12 @@
   import EventDetail from '../components/events/EventDetail.vue'
   import MessageDetail from '../components/messages/MessageDetail.vue'
   import TitleBar from '../components/common/TitleBar.vue'
-  import UiButton from '../components/common/Button.vue'
   import Media from '../components/common/Media.vue'
 
   export default {
     components: {
       LoadMore,
       Media,
-      UiButton,
       TitleBar
     },
     data () {

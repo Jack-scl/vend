@@ -3,8 +3,8 @@
         <title-bar>
             <template slot="left">{{ $t('events.index') }}</template>
             <template slot="right">
-                <v-button :href="`/calendar/${currentUser.event_url}/calendar.ics`" target="_blank">{{ $t('events.ics') }}</v-button>
-                <v-button @click="create" type="primary">{{ $t('events.create') }}</v-button>
+                <a :href="`/calendar/${currentUser.event_url}/calendar.ics`" target="_blank" class="btn btn-default">{{ $t('events.ics') }}</a>
+                <button @click="create" class="btn btn-primary">{{ $t('events.create') }}</button>
             </template>
         </title-bar>
 
@@ -31,7 +31,6 @@
     import {mapGetters} from 'vuex'
     import moment from 'moment'
     import Loader from '../components/common/Loader.vue'
-    import VButton from '../components/common/Button.vue'
     import EventAttachment from '../components/events/EventAttachment.vue'
     import EventDetail from '../components/events/EventDetail.vue'
     import EventForm from '../components/events/EventForm.vue'
@@ -41,7 +40,6 @@
     export default {
       components: {
         Loader,
-        VButton,
         TitleBar,
         EventAttachment
       },

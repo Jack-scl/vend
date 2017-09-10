@@ -27,11 +27,13 @@
     computed: {
       ...mapGetters({
         favorites: 'favorites'
-      })
+      }),
+      links() {
+        return this.favorites.map(this.mapFavorite)
+      }
     },
     data () {
       return {
-        links: [],
         routeMapping: {
           topics: 'topic',
           projects: 'project'
@@ -43,17 +45,18 @@
       }
     },
     mounted () {
-      this.$store.dispatch('getFavorites').then(() => {
-        this.links = this.favorites.map(f => {
-          return {
-            id: f.id,
-            icon: this.icons[f.type],
-            to: this.routeMapping[f.type],
-            params: {id: f.favoritable.id},
-            label: f.favoritable.title
-          }
-        })
-      })
+      this.$store.dispatch('getFavorites')
+    },
+    methods: {
+      mapFavorite(f) {
+        return {
+          id: f.id,
+          icon: this.icons[f.type],
+          to: this.routeMapping[f.type],
+          params: {id: f.favoritable.id},
+          label: f.favoritable.title
+        }
+      }
     }
   }
 </script>

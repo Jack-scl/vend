@@ -96,8 +96,8 @@
     }
     &-header-left,
     &-header-right {
-        width: 90px;
         font-size: 13px;
+        flex: 0.4;
         a {
             display: inline-block;
             border: 1px solid rgba(0, 0, 0, .2);

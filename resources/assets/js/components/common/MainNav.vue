@@ -1,6 +1,6 @@
 <template>
 
-  <sidebar background="#495891" :open="true">
+  <sidebar background="#495891" :open="true" class="main-sidebar">
 
     <template slot="heading">
       <a href="#" class="logo"></a>
@@ -75,12 +75,16 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .logo {
     float: left;
     width: 50px;
     height: 31px;
     background: url('../../../images/logo-dark.svg') no-repeat center;
     background-size: contain;
+  }
+
+  .main-sidebar .sidebar-heading {
+    margin-bottom: 50px;
   }
 </style>

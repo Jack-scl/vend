@@ -130,6 +130,7 @@ export default {
   messages: {
     create: 'New message',
     edit: 'Edit message',
+    empty: 'No messages',
     form: {
       message: 'Your message...'
     }

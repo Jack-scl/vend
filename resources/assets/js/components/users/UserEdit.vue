@@ -1,6 +1,6 @@
 <template>
     <modal-content
-        :title="user.id ? 'users.edit'  : 'users.create'"
+        :title="user.id ? $t('users.edit')  : $t('users.create')"
         :save="save"
         :cancel="cancel">
 
@@ -16,13 +16,13 @@
                     :text="$t('users.uploadFile')"
                     :single="true" />
         </div>
-        <form-input label="users.form.name" v-model="user.name" />
-        <form-input label="users.form.email" v-model="user.email" />
-        <form-input label="users.form.role" type="select" v-model="user.role" :options="userRoles" />
+        <form-input :label="$t('users.form.name')" v-model="user.name" />
+        <form-input :label="$t('users.form.email')" v-model="user.email" />
+        <form-input :label="$t('users.form.role')" type="select" v-model="user.role" :options="userRoles" />
         <div class="divider"></div>
         <h4 v-if="user.id">{{ $t('users.form.changePassword') }}</h4>
-        <form-input label="users.form.password" v-model="user.password" />
-        <form-input label="users.form.passwordConfirmation" v-model="user.password_confirm" />
+        <form-input :label="$t('users.form.password')" v-model="user.password" />
+        <form-input :label="$t('users.form.passwordConfirmation')" v-model="user.password_confirm" />
 
     </modal-content>
 </template>

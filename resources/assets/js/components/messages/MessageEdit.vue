@@ -1,7 +1,7 @@
 <template>
-    <modal-content :save="save" title="messages.edit">
+    <modal-content :save="save" :title="$t('messages.edit')">
         <error-message ref="errorMessage" />
-        <editor v-model="message.message" placeholder="messages.form.message" />
+        <editor v-model="message.message" :placeholder="$t('messages.form.message')" />
         <div class="media-grid">
             <file-attachment v-for="file in message.files" v-bind:key="file.id" :file="file" />
         </div>

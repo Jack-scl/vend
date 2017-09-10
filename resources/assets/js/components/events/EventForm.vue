@@ -1,20 +1,20 @@
 <template>
     <modal-content
-        :title="event.id ? 'events.edit' : 'events.create'"
+        :title="event.id ? $t('events.edit') : $t('events.create')"
         :save="save"
         :cancel="cancel">
         <error-message ref="errorMessage" />
-        <form-input label="events.title" v-model="event.title" />
+        <form-input :label="$t('events.title')" v-model="event.title" />
         <div class="row">
             <div class="col-md-6">
-                <datepicker v-model="event.start" :has-time="true" label="events.start" />
+                <datepicker v-model="event.start" :has-time="true" :label="$t('events.start')" />
             </div>
             <div class="col-md-6">
-                <datepicker v-model="event.end" :has-time="true" label="events.end" />
+                <datepicker v-model="event.end" :has-time="true" :label="$t('events.end')" />
             </div>
         </div>
-        <form-input label="events.location" v-model="event.location" />
-        <editor v-model="event.description" placeholder="events.description" />
+        <form-input :label="$t('events.location')" v-model="event.location" />
+        <editor v-model="event.description" :placeholder="$t('events.description')" />
     </modal-content>
 </template>
 

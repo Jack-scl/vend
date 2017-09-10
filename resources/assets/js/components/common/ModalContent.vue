@@ -2,13 +2,13 @@
     <div>
         <div class="modal-header">
             <div class="modal-header-left">
-                <a v-if="left" @click="left.action()">{{ $t(left.label) }}</a>
+                <a v-if="left" @click="left.action()">{{ left.label }}</a>
             </div>
             <div class="modal-title">
-                {{ $t(title) }}
+                {{ title }}
             </div>
             <div class="modal-header-right">
-                <a v-if="right" @click="right.action()">{{ $t(right.label) }}</a>
+                <a v-if="right" @click="right.action()">{{ right.label }}</a>
             </div>
         </div>
         <div class="modal-meta" v-if="$slots['modal-meta']">

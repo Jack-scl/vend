@@ -1,8 +1,8 @@
 <template>
   <modal-content
           :title="card.title"
-          :left="{label: 'common.delete', action: deleteCard}"
-          :right="{label: 'common.edit', action: editCard}">
+          :left="{label: $t('common.delete'), action: deleteCard}"
+          :right="{label: $t('common.edit'), action: editCard}">
     <template slot="modal-meta">
       <span v-if="card.assigned">
         <img :src="card.assigned.image" class="label-image"> {{ card.assigned.name }}

@@ -1,6 +1,6 @@
 <template>
     <div class="form-group">
-        <label v-if="label">{{ $t(label) }}</label>
+        <label v-if="label">{{ label }}</label>
         <dropdown ref="dropdown">
             <template slot="toggle">
                 <div class="input-group">

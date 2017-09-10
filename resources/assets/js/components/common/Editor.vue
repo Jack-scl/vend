@@ -14,11 +14,11 @@
         value: {},
         content: {
           type: String,
-          default: ''
+          default: () => ''
         },
         placeholder: {
           type: String,
-          default: ''
+          default: () => ''
         }
       },
       data () {
@@ -34,7 +34,7 @@
               ['bold', 'italic', 'link', 'code-block']
             ]
           },
-          placeholder: this.$t(this.placeholder),
+          placeholder: this.placeholder,
           theme: 'snow'
         })
 

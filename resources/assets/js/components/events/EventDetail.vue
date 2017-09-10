@@ -1,8 +1,8 @@
 <template>
     <modal-content
         :title="event.title"
-        :left="{label: 'common.delete', action: destroy}"
-        :right="{label: 'common.edit', action: edit}">
+        :left="{label: $t('common.delete'), action: destroy}"
+        :right="{label: $t('common.edit'), action: edit}">
 
         <span class="label label-primary">{{ dateFormat(event.start) }}</span>
         <div v-html="event.description" v-if="event.description !== ''"></div>

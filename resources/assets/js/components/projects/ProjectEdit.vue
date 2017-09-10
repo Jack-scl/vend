@@ -2,12 +2,12 @@
     <modal-content
             :save="save"
             :cancel="cancel"
-            :title="project.id ? 'projects.edit' : 'projects.create'"
-            :left="{label: 'common.delete', action: destroy}"
-            :right="{label: project.is_archive ? 'projects.unArchiveProject' : 'projects.archiveProject', action: toggleArchive}">
+            :title="project.id ? $t('projects.edit') : $t('projects.create')"
+            :left="{label: $t('common.delete'), action: destroy}"
+            :right="{label: project.is_archive ? $t('projects.unArchiveProject') : $t('projects.archiveProject'), action: toggleArchive}">
         <error-message ref="errorMessage" />
-        <form-input label="projects.form.title" :large="true" v-model="project.title" />
-        <datepicker label="projects.form.dueDate" v-model="project.due_date" />
+        <form-input :label="$t('projects.form.title')" :large="true" v-model="project.title" />
+        <datepicker :label="$t('projects.form.dueDate')" v-model="project.due_date" />
         <tabs>
             <div slot="tabs">
                 <a data-target="#columns" class="active">{{ $t('projects.columns') }}</a>

@@ -21,7 +21,7 @@
     </div>
     <form action="#" @submit.prevent="save()">
       <div class="form-group">
-        <editor v-model="newComment.content" placeholder="comments.placeholder"></editor>
+        <editor v-model="newComment.content" :placeholder="$t('comments.placeholder')"></editor>
       </div>
       <div class="text-right">
         <button class="btn btn-primary">{{ $t('comments.create') }}</button>

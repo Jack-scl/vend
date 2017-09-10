@@ -1,7 +1,7 @@
 <template>
   <modal-content
           :title="topic.id ? $t('topics.edit') : $t('topics.create')"
-          :left="topic.id ? {label: 'common.delete', action: deleteTopic} : null"
+          :left="topic.id ? {label: $t('common.delete'), action: deleteTopic} : null"
           :save="save"
           :cancel="cancel">
     <error-message ref="errorMessage"/>

@@ -1,15 +1,15 @@
 <template>
-  <modal-content :save="save" :cancel="cancel" :title="title">
-    <form-input label="cards.form.title" v-model="card.title"/>
+  <modal-content :save="save" :cancel="cancel" :title="this.card.id ? this.$t('cards.edit') : this.$t('cards.create')">
+    <form-input :label="$t('cards.form.title')" v-model="card.title"/>
     <div class="row">
       <div class="col-md-6">
         <form-input type="select"
                     :options="userList"
                     v-model="card.assigned_to"
-                    label="cards.form.assignedTo"/>
+                    :label="$t('cards.form.assignedTo')"/>
       </div>
       <div class="col-md-6">
-        <datepicker v-model="card.due_date" label="cards.form.dueDate"/>
+        <datepicker v-model="card.due_date" :label="$t('cards.form.dueDate')"/>
       </div>
     </div>
     <editor v-model="card.description"/>
@@ -39,12 +39,7 @@
       ...mapGetters({
         users: 'users',
         card: 'card'
-      }),
-      title () {
-        return this.card.id
-          ? 'cards.edit'
-          : 'cards.create'
-      }
+      })
     },
     mounted () {
       this.userList = this.users.map(u => {

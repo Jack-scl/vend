@@ -3,7 +3,7 @@
     <label>{{ label }}</label>
 
     <input type="text"
-           :placeholder="placeholder ? $t(placeholder) : ''"
+           :placeholder="placeholder ? placeholder : ''"
            :value="value"
            :class="[{'input-lg': large}, 'form-control']"
            @change="$emit('input', $event.target.value)"

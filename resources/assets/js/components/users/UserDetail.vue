@@ -1,7 +1,7 @@
 <template>
     <modal-content
-        :left="{label: 'common.delete', action: destroy}"
-        :right="{label: 'common.edit', action: edit}">
+        :left="{label: $t('common.delete'), action: destroy}"
+        :right="{label: $t('common.edit'), action: edit}">
         <div class="form-group">
             <div class="avatar-upload">
                 <img :src="user.image" alt="" class="avatar-upload-image">

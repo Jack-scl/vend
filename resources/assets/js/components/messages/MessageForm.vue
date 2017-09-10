@@ -2,7 +2,7 @@
     <div class="mb-md">
         <form @submit.prevent="save()" class="message-form">
             <error-message ref="errorMessage" />
-            <editor v-model="message.message" placeholder="messages.form.message" />
+            <editor v-model="message.message" :placeholder="$t('messages.form.message')" />
             <div class="media-grid">
                 <file-attachment v-for="file in message.files" v-bind:key="file.id" :file="file" />
             </div>
